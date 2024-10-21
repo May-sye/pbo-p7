@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Profile</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 16px;
+}
+
+a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hai, <%= user.username %></h2>
+        
+        <h3>Berikut merupakan jenis-jenis ikan pelagis yang ada di perairan Banten:</h3> <br>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>NAMA</td>
+            </tr>
+
+            <% ikan.forEach(iwak => {%>
+
+            <tr>
+                <td><%= iwak.id %></td>
+                <td><%= iwak.nama %></td>
+            </tr>
+            <% }) %>
+        </table>
+
+        <a href="/auth/logout">Keluar</a>
+    </div>
+    
+</body>
+</html>
